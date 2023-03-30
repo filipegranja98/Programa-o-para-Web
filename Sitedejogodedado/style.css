@@ -37,6 +37,7 @@ h1{
     
 #botao:hover{
     cursor: pointer;
+    font-weight: bold;
     transition-duration: 0.3s;
     background-color: rgb(2, 58, 2);
     border-radius: 15px;
