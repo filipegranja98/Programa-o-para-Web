@@ -19,22 +19,23 @@ const redesenhaLista = (lista, listaItems) => {
 };
 
 
-const handleBtAdicionarClick = () => {
-  const item = inputItem.value;
-  const quantidade = inputQuantidade.value;
-  const preco = inputPreco.value;
-  if (!item || !quantidade || !preco ) {
-    alert("Necessário digitar um item!");
-    return;
-  }
-  const lista = document.getElementById("lista");
-  const novaLi = document.createElement("li");
-  novaLi.innerHTML = `Item: ${item} - Quantidade: ${quantidade} - Preço: ${preco}`;
-  lista.appendChild(novaLi);
-  document.getElementById("inputItem").value = "";
-  document.getElementById("inputQuantidade").value = "";
-  document.getElementById("inputPreco").value = "";
-  document.getElementById("inputItem").focus();
+  const handleBtAdicionarClick = () => {
+    const item = inputItem.value;
+    const quantidade = inputQuantidade.value;
+    const preco = inputPreco.value;
+    if (!item || !quantidade || !preco ) {
+      alert("Necessário digitar um item!");
+      return;
+    }
+    const lista = document.querySelector("#lista tbody");
+    const novaLinha = document.createElement("tr");
+    novaLinha.innerHTML = `<td>${item}</td><td>${quantidade}</td><td>R$ ${preco}</td>`;
+    lista.appendChild(novaLinha);
+    document.getElementById("inputItem").value = "";
+    document.getElementById("inputQuantidade").value = "";
+    document.getElementById("inputPreco").value = "";
+    document.getElementById("inputItem").focus();
+  
 };
 
 const handleBtLimparClick = () => {
