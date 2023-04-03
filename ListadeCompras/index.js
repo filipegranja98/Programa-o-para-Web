@@ -22,14 +22,14 @@ const redesenhaLista = (lista, listaItems) => {
   const handleBtAdicionarClick = () => {
     const item = inputItem.value;
     const quantidade = inputQuantidade.value;
-    const preco = inputPreco.value;
+    const preco = parseFloat(inputPreco.value);
     if (!item || !quantidade || !preco ) {
       alert("Necessário digitar um item!");
       return;
     }
     const lista = document.querySelector("#lista tbody");
     const novaLinha = document.createElement("tr");
-    novaLinha.innerHTML = `<td>${item}</td><td>${quantidade}</td><td>R$ ${preco}</td>`;
+    novaLinha.innerHTML = `<td>${item}</td><td>${quantidade}</td><td>R$ ${preco.toFixed(2)}</td>`;
     lista.appendChild(novaLinha);
     document.getElementById("inputItem").value = "";
     document.getElementById("inputQuantidade").value = "";
