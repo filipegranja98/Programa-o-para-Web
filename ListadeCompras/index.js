@@ -29,7 +29,7 @@ const redesenhaLista = (lista, listaItems) => {
     }
     const lista = document.querySelector("#lista tbody");
     const novaLinha = document.createElement("tr");
-    novaLinha.innerHTML = `<td>${item}</td><td>${quantidade}</td><td>R$ ${preco.toFixed(2)}</td>`;
+    novaLinha.innerHTML = `<td>${item}</td><td>${quantidade}</td><td>R$ ${preco.toFixed(2)}</td> <td>R$ ${(preco * quantidade).toFixed(2)}</td>`;
     lista.appendChild(novaLinha);
     document.getElementById("inputItem").value = "";
     document.getElementById("inputQuantidade").value = "";
